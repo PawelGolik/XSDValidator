@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="https://www.w3schools.com"
+    xmlns="https://www.w3schools.com"
+    elementFormDefault="qualified">
+
+    <xs:element name="University" type="UniversityStruct"/>
+    <xs:complexType name="UniversityStruct">
+        <xs:sequence>
+            <xs:element name="Faculty" type="FacultyStruct" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="FacultyStruct">
+        <xs:sequence>
+            <xs:element name="Major" type="xs:string" minOccurs="0"/>
+            <xs:element name="EnginerStudies" type="StadiesStruct"/>
+            <xs:element name="MasterSutudies" type="StadiesStruct"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string"/>
+    </xs:complexType>
+    <xs:complexType name="StadiesStruct">
+        <xs:sequence>
+            <xs:element name="Flield" type="FlieldStruct" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="FlieldStruct">
+        <xs:sequence>
+            <xs:element name="Description" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string"/>
+    </xs:complexType>
+</xs:schema>
